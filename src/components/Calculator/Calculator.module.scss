@@ -1,0 +1,17 @@
+@import "../../styles/vars";
+@import "../../styles/colors";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.step_count {
+  color: $second-font-color;
+}

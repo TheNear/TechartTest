@@ -1,3 +1,5 @@
+@import "./styles/colors";
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -5,6 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: darkslateblue;
+  background-color: $bg-color;
 }
 
