@@ -1,0 +1,1 @@
+# TECHART test assignment
