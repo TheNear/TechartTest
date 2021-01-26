@@ -41,6 +41,20 @@
 
 .content {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
+  
+}
+
+.left {
+  align-items: flex-start;
+}
+
+.center {
+  align-items: center;
+}
+
+.right {
+  align-items: flex-end
 }
