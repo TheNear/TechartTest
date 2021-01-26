@@ -1,0 +1,27 @@
+@import "../../styles/vars";
+
+.wrapper_template {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 0.3rem;
+  background-color: white;
+  box-shadow: $defult-shadow;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #c7e3fb;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}

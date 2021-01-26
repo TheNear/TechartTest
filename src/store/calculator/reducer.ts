@@ -1,17 +1,16 @@
 import {
-  BuildsEnum,
   CalculatorActions,
   CalculatorActionTypes,
   CalculatorInitialState,
-  MaterialEnum,
 } from "./types";
 
 const initialState: CalculatorInitialState = {
-  buildType: BuildsEnum.HOUSE,
-  height: 0,
-  material: MaterialEnum.BRICK,
   step: 1,
-  wallSize: 0,
+  buildType: null,
+  height: null,
+  material: null,
+  wallSizeX: null,
+  wallSizeY: null,
 };
 
 export const calculatorReducer = (
@@ -21,6 +20,14 @@ export const calculatorReducer = (
   switch (action.type) {
     case CalculatorActionTypes.RESET_CALCULATOR:
       return initialState;
+    case CalculatorActionTypes.SET_WALL_SIZE:
+      return { ...state, wallSizeX: action.payload.xSize, wallSizeY: action.payload.ySize };
+    case CalculatorActionTypes.SET_BUILD_TYPE:
+      return { ...state, buildType: action.payload };
+    case CalculatorActionTypes.SET_MATERIAL:
+      return { ...state, material: action.payload };
+    case CalculatorActionTypes.SET_HEIGHT:
+      return { ...state, height: action.payload };
     default:
       return state;
   }

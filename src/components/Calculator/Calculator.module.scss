@@ -2,14 +2,15 @@
 @import "../../styles/colors";
 
 .wrapper {
+  min-width: 35rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .title {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .step_count {
