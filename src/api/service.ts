@@ -11,7 +11,7 @@ class ApiService {
     this.BASE_URL = BASE_URL;
     this.axiosOption = {
       baseURL: this.BASE_URL,
-      timeout: 1500,
+      timeout: 2000,
     };
   }
 
@@ -20,7 +20,7 @@ class ApiService {
     return data;
   }
 
-  public getCalcResult = async (query: string) => {
+  public getCalcResult = async (query: string): Promise<GetCalcResultResponse> => {
     const data = await ApiService.get<GetCalcResultResponse>(query, this.axiosOption);
     return data;
   }

@@ -1,8 +1,11 @@
+import { GetCalcResultResponse } from "../../api/types";
 import { InferValueTypes } from "../../types/redux";
 import * as actions from "./action";
 
 export enum CalculatorActionTypes {
   RESET_CALCULATOR = "@calculator/RESET_CALCULATOR",
+  ALL_SETS = "@calculator/SET_*",
+  SET_RESULT = "@calculator/SHOW_RESULT",
   SET_WALL_SIZE = "@calculator/SET_WALL_SIZE",
   SET_BUILD_TYPE = "@calculator/SET_BUILD_TYPE",
   SET_MATERIAL = "@calculator/SET_MATERIAL",
@@ -30,7 +33,10 @@ export enum MaterialEnum {
   SANDWICH_PANEL = "5",
 }
 
-export interface CalculatorData {
+interface CalcultorDataType {
+  [key: string]: string | null,
+}
+export interface CalculatorData extends CalcultorDataType {
   readonly building: BuildsEnum | null,
   readonly height: string | null,
   readonly material: MaterialEnum | null,
@@ -41,6 +47,7 @@ export interface CalculatorData {
 export interface CalculatorInitialState {
   readonly step: number,
   readonly currentStep: CalculatorPagesEnum,
+  readonly result: GetCalcResultResponse | null,
   readonly data: CalculatorData;
 }
 

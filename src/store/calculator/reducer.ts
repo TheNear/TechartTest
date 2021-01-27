@@ -9,6 +9,7 @@ import {
 const initialState: CalculatorInitialState = {
   step: 1,
   currentStep: CalculatorPagesEnum.BUILD,
+  result: null,
   data: {
     building: null,
     height: null,
@@ -29,6 +30,7 @@ export const calculatorReducer = (
       return {
         ...state,
         data: { ...state.data, building: action.payload },
+        step: state.step + 1,
         currentStep:
           action.payload === BuildsEnum.HOUSE
             ? CalculatorPagesEnum.HEIGHT
@@ -37,12 +39,14 @@ export const calculatorReducer = (
     case CalculatorActionTypes.SET_HEIGHT:
       return {
         ...state,
+        step: state.step + 1,
         data: { ...state.data, height: action.payload },
         currentStep: CalculatorPagesEnum.MATERIAL,
       };
     case CalculatorActionTypes.SET_MATERIAL:
       return {
         ...state,
+        step: state.step + 1,
         data: { ...state.data, material: action.payload },
         currentStep: CalculatorPagesEnum.SIZE,
       };
@@ -50,8 +54,9 @@ export const calculatorReducer = (
       return {
         ...state,
         data: { ...state.data, sizex: action.payload.xSize, sizey: action.payload.ySize },
-        currentStep: CalculatorPagesEnum.RESULT,
       };
+    case CalculatorActionTypes.SET_RESULT:
+      return { ...state, currentStep: CalculatorPagesEnum.RESULT, result: action.payload };
     default:
       return state;
   }
