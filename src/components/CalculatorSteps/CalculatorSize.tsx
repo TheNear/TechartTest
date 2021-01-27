@@ -1,7 +1,11 @@
 import React from "react";
 
 const CalculatorSize: React.FC = () => {
-  return <div />;
+  return (
+    <div>
+      SIZE
+    </div>
+  );
 };
 
 export { CalculatorSize };

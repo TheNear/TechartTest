@@ -2,12 +2,19 @@ import React from "react";
 import style from "./LinkButton.module.scss";
 
 interface LinkButtonProps {
-  className?: string,
+  className?: string;
+  onClick?: () => void;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, className }) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, className, onClick }) => {
   return (
-    <button type="button" className={`${style.link_button} ${className}`}>{`\u2022 ${children}`}</button>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`${style.link_button} ${className}`}
+    >
+      {`\u2022 ${children}`}
+    </button>
   );
 };
 

@@ -1,7 +1,11 @@
 import React from "react";
 
 const CalculatorHeight: React.FC = () => {
-  return <div />;
+  return (
+    <div>
+      HEIGHT
+    </div>
+  );
 };
 
 export { CalculatorHeight };

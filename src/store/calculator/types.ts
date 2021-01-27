@@ -9,6 +9,14 @@ export enum CalculatorActionTypes {
   SET_HEIGHT = "@calculator/SET_HEIGHT",
 }
 
+export enum CalculatorPagesEnum {
+  BUILD = "BUILD",
+  HEIGHT = "HEIGHT",
+  MATERIAL = "MATERIAL",
+  SIZE = "SIZE",
+  RESULT = "RESULT",
+}
+
 export enum BuildsEnum {
   HOUSE = "1",
   GARAGE = "2",
@@ -22,13 +30,18 @@ export enum MaterialEnum {
   SANDWICH_PANEL = "5",
 }
 
-export interface CalculatorInitialState {
-  readonly step: number,
-  readonly buildType: BuildsEnum | null,
+export interface CalculatorData {
+  readonly building: BuildsEnum | null,
   readonly height: string | null,
   readonly material: MaterialEnum | null,
-  readonly wallSizeX: string | null,
-  readonly wallSizeY: string | null,
+  readonly sizex: string | null,
+  readonly sizey: string | null,
+}
+
+export interface CalculatorInitialState {
+  readonly step: number,
+  readonly currentStep: CalculatorPagesEnum,
+  readonly data: CalculatorData;
 }
 
 export type CalculatorActions = ReturnType<InferValueTypes<typeof actions>>;
